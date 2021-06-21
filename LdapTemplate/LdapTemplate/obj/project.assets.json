@@ -733,11 +733,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\fatih.dagdeviren\\Desktop\\LdapTemplate\\LdapTemplate\\LdapTemplate.csproj",
+      "projectUniqueName": "D:\\OutSource\\LdapTemplate\\LdapTemplate\\LdapTemplate\\LdapTemplate.csproj",
       "projectName": "LdapTemplate",
-      "projectPath": "C:\\Users\\fatih.dagdeviren\\Desktop\\LdapTemplate\\LdapTemplate\\LdapTemplate.csproj",
+      "projectPath": "D:\\OutSource\\LdapTemplate\\LdapTemplate\\LdapTemplate\\LdapTemplate.csproj",
       "packagesPath": "C:\\Users\\fatih.dagdeviren\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\fatih.dagdeviren\\Desktop\\LdapTemplate\\LdapTemplate\\obj\\",
+      "outputPath": "D:\\OutSource\\LdapTemplate\\LdapTemplate\\LdapTemplate\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

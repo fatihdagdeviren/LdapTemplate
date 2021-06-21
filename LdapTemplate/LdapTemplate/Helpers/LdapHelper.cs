@@ -73,8 +73,48 @@ namespace LdapTemplate.Helpers
 
             return res;
         }
-       
 
+
+
+        public static Result<string> Validate(string userId, string passwordf)
+        {
+            DirectoryEntry searchRoot = null;
+            DirectorySearcher searcher = null;
+            DirectoryEntry userEntry = null;
+            Result<string> res = new Result<string>();
+            res.IsSuccess = false;
+            res.ResultType = ResultType.Error;
+            try
+            {
+                foreach (var host in hostArr)
+                {
+                    searchRoot = new DirectoryEntry($"LDAP://{host}/{baseDn}", userId, passwordf);
+                    searcher = new DirectorySearcher(searchRoot);
+                    searcher.SearchScope = SearchScope.Subtree;
+                    searcher.CacheResults = false;
+                    SearchResult searchResult = searcher.FindOne();
+                    if (searchResult != null)
+                    {
+                        res.IsSuccess = true;
+                        res.ResultType = ResultType.Success;
+                        res.Message = "Başarılı";
+                        break;
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                res.Message = ex.InnerException != null ? ex.InnerException.ToString() : ex.Message;
+            }
+            finally
+            {
+                if (userEntry != null) userEntry.Dispose();
+                if (searcher != null) searcher.Dispose();
+                if (searchRoot != null) searchRoot.Dispose();
+            }
+            return res;
+        }
         public static Result<DirectoryEntry> Add(LdapStudent student)
         {
 
@@ -233,29 +273,28 @@ namespace LdapTemplate.Helpers
             res.ResultType = ResultType.Error;
             try
             {
-                searchRoot = new DirectoryEntry($"LDAP://{hostArr[0]}/{baseDn}", username, password);
-                searcher = new DirectorySearcher(searchRoot);
-                searcher.Filter = String.Format("sAMAccountName={0}", studentNo);
-                searcher.SearchScope = SearchScope.Subtree;
-                searcher.CacheResults = false;
-
-                SearchResult searchResult = searcher.FindOne(); ;
-                if (searchResult != null)
+                foreach (string host  in hostArr)
                 {
+                    searchRoot = new DirectoryEntry($"LDAP://{host}/{baseDn}", username, password);
+                    searcher = new DirectorySearcher(searchRoot);
+                    searcher.Filter = String.Format("sAMAccountName={0}", studentNo);
+                    searcher.SearchScope = SearchScope.Subtree;
+                    searcher.CacheResults = false;
 
-                    userEntry = searchResult.GetDirectoryEntry();
+                    SearchResult searchResult = searcher.FindOne(); ;
+                    if (searchResult != null)
+                    {
+                        userEntry = searchResult.GetDirectoryEntry();
+                        userEntry.Invoke("SetPassword", new object[] { newPassword });
+                        userEntry.CommitChanges();
 
-                    userEntry.Invoke("SetPassword", new object[] { newPassword });
-                    userEntry.CommitChanges();
-
-                    res.IsSuccess = true;
-                    res.ResultType = ResultType.Success;
-                    res.Message = "Başarılı";
+                    }
                 }
-                else
-                {
-                    res.Message = "Kullanici Bulunamadi";
-                }
+
+                res.IsSuccess = true;
+                res.ResultType = ResultType.Success;
+                res.Message = "Başarılı";
+
             }
             catch (Exception ex)
             {

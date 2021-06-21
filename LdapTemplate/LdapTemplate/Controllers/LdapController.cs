@@ -76,6 +76,18 @@ namespace LdapTemplate.Controllers
             
         }
 
+        [Microsoft.AspNetCore.Mvc.HttpPost("validate/{value}")]
+        public IActionResult Validate(ValidateModel userForValidate)
+        {
+            Result<string> res = LdapHelper.Validate(userForValidate.KullaniciAdi, userForValidate.Sifre);
+            if (res.IsSuccess)
+            {
+                return Ok(res);
+            }
+            return NotFound(res);
+
+        }
+
 
     }
 }
