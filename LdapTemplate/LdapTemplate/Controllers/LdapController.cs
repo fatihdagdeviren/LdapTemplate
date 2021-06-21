@@ -76,7 +76,7 @@ namespace LdapTemplate.Controllers
             
         }
 
-        [Microsoft.AspNetCore.Mvc.HttpPost("validate/{value}")]
+        [Microsoft.AspNetCore.Mvc.HttpPost("validate")]
         public IActionResult Validate(ValidateModel userForValidate)
         {
             Result<string> res = LdapHelper.Validate(userForValidate.KullaniciAdi, userForValidate.Sifre);

@@ -1,0 +1,14 @@
+D:\OutSource\LdapTemplate\LdapTemplate\LdapTemplate\obj\Release\net5.0\PubTmp\Out\LdapTemplate.exe
+D:\OutSource\LdapTemplate\LdapTemplate\LdapTemplate\obj\Release\net5.0\PubTmp\Out\appsettings.Development.json
+D:\OutSource\LdapTemplate\LdapTemplate\LdapTemplate\obj\Release\net5.0\PubTmp\Out\appsettings.json
+D:\OutSource\LdapTemplate\LdapTemplate\LdapTemplate\obj\Release\net5.0\PubTmp\Out\LdapTemplate.dll
+D:\OutSource\LdapTemplate\LdapTemplate\LdapTemplate\obj\Release\net5.0\PubTmp\Out\LdapTemplate.deps.json
+D:\OutSource\LdapTemplate\LdapTemplate\LdapTemplate\obj\Release\net5.0\PubTmp\Out\LdapTemplate.runtimeconfig.json
+D:\OutSource\LdapTemplate\LdapTemplate\LdapTemplate\obj\Release\net5.0\PubTmp\Out\LdapTemplate.pdb
+D:\OutSource\LdapTemplate\LdapTemplate\LdapTemplate\obj\Release\net5.0\PubTmp\Out\Microsoft.OpenApi.dll
+D:\OutSource\LdapTemplate\LdapTemplate\LdapTemplate\obj\Release\net5.0\PubTmp\Out\Novell.Directory.Ldap.NETStandard.dll
+D:\OutSource\LdapTemplate\LdapTemplate\LdapTemplate\obj\Release\net5.0\PubTmp\Out\Swashbuckle.AspNetCore.Swagger.dll
+D:\OutSource\LdapTemplate\LdapTemplate\LdapTemplate\obj\Release\net5.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\OutSource\LdapTemplate\LdapTemplate\LdapTemplate\obj\Release\net5.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\OutSource\LdapTemplate\LdapTemplate\LdapTemplate\obj\Release\net5.0\PubTmp\Out\System.DirectoryServices.dll
+D:\OutSource\LdapTemplate\LdapTemplate\LdapTemplate\obj\Release\net5.0\PubTmp\Out\runtimes\win\lib\netcoreapp2.0\System.DirectoryServices.dll
